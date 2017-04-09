@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Octopus</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body>
-    Octupus UI
+  <body ng-controller="HomeCtrl" class="container">
+    <div class="row">
+      <div class="col-md-3 input" ng-repeat="input in inputs">
+        <div class="logo">
+          <img ng-src="{{input.logo}}" />
+        </div>
+        <label>{{input.name}}</label>
+      </div>
+    </div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" charset="utf-8"></script>
   <!-- inject:js -->
   <!-- endinject -->
 </html>

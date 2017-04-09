@@ -2,5 +2,19 @@
 
 body{
   height: 100%;
+}
+
+.input {
+  height:100px;
   background-color: $primary-color;
+  display: flex;
+  .logo {
+    width: 100%;
+
+    img {
+      max-width: $logo-width;
+      max-height: $logo-height;
+      margin: auto;
+    }
+  }
 }

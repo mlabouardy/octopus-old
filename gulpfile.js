@@ -10,14 +10,16 @@ var input = {
   sass: 'public/assets/sass/**/*.scss',
   html: ['!public/plugins', 'public/**/*.html'],
   js: 'public/app/**/*.js',
-  index: 'public/index.html'
+  index: 'public/index.html',
+  resources: 'public/assets/images/*'
 }
 
 var output = {
   css : 'build/assets/stylesheets',
   js: 'build/assets/javascript',
   html: 'build',
-  index: 'build/index.html'
+  index: 'build/index.html',
+  resources: 'build/assets/images/'
 }
 
 gulp.task('clean', function(cb){
@@ -42,11 +44,16 @@ gulp.task('build-js', function(){
              .pipe(gulp.dest(output.js))
 })
 
+gulp.task('build-resources', function(){
+  return gulp.src(input.resources)
+             .pipe(gulp.dest(output.resources))
+})
+
 gulp.task('inject', function(){
   var sources = gulp.src([output.css + '/**/*.css', output.js + '/**/*.js'], {read:false})
   return gulp.src(output.index)
-             .pipe(inject(sources), {ignorePath: input.html})
-             .pipe(gulp.dest(output.index))
+             .pipe(inject(sources, {ignorePath: output.html}))
+             .pipe(gulp.dest(output.html))
 })
 
-gulp.task('build', gulpSync.sync(['build-html', 'build-css', 'build-js', 'inject']))
+gulp.task('build', gulpSync.sync([['build-html', 'build-css', 'build-js', 'build-resources'], 'inject']))
