@@ -16,18 +16,25 @@
 <div class="content">
   <div class="row">
     <div class="col-lg-12">
+      <div class="alert alert-warning" ng-if="error">
+        You must selected one collector agent & at least one output plugin !
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
       <div class="header-title">Collectors</div>
     </div>
-    <div class="col-md-3 collector" ng-repeat="collector in collectors">
-      <div class="logo"><img ng-src="{{collector.logo}}" class="img-responsive center-block" /></div>
+    <div class="col-md-3 collector" ng-repeat="collector in collectors" ng-click="onSelectColector($event, collector)">
+      <div class="logo"><img ng-src="{{collector.logo}}" class="img-responsive center-block" ng-class="{'item-active': collector.selected}"/></div>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-12">
       <div class="header-title">Output</div>
     </div>
-    <div class="col-md-3 collector" ng-repeat="output in outputs">
-      <div class="logo"><img ng-src="{{output.logo}}" class="img-responsive center-block" /></div>
+    <div class="col-md-3 collector" ng-repeat="output in outputs" ng-click="onSelectColector($event, output)">
+      <div class="logo"><img ng-src="{{output.logo}}" class="img-responsive center-block" ng-class="{'item-active': output.selected}"/></div>
     </div>
   </div>
 </div>

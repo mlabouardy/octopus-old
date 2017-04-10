@@ -1,36 +1,70 @@
-var HomeCtrl = function($scope, $location){
+var HomeCtrl = function($scope, $location, ConfigurationFactory){
   $scope.collectors = [
     {
-      name: 'Telegraf',
-      logo: 'assets/images/telegraf.png'
+      name: 'telegraf',
+      logo: 'assets/images/telegraf.png',
+      selected: false
     }
   ];
 
   $scope.outputs = [
     {
-      name: 'InfluxDB',
-      logo: 'assets/images/influxdb.png'
+      name: 'influxdb',
+      logo: 'assets/images/influxdb.png',
+      selected: false
     },
     {
-      name: 'ElasticSearch',
-      logo: 'assets/images/elasticsearch.png'
+      name: 'elasticsearch',
+      logo: 'assets/images/elasticsearch.png',
+      selected: false
     },
     {
-      name: 'Graphite',
-      logo: 'assets/images/graphite.png'
+      name: 'graphite',
+      logo: 'assets/images/graphite.png',
+      selected: false
     },
     {
-      name: 'Graylog',
-      logo: 'assets/images/graylog.png'
+      name: 'graylog',
+      logo: 'assets/images/graylog.png',
+      selected: false
     },
     {
-      name: 'AWS CloudWatch',
-      logo: 'assets/images/cloudwatch.png'
+      name: 'cloudwatch',
+      logo: 'assets/images/cloudwatch.png',
+      selected: false
     }
   ];
 
+  $scope.getSelectedItems = function(list){
+    var tmp = list.filter(function(item){
+      return item.selected;
+    });
+    var output = [];
+    tmp.forEach(function(item){
+      output.push(item.name);
+    });
+    return output;
+  };
+
   $scope.configure = function(){
-    $location.path('/configuration');
+    $scope.error = false;
+    var selectedCollector = $scope.getSelectedItems($scope.collectors);
+    var selectedOutputs = $scope.getSelectedItems($scope.outputs);
+    if(selectedCollector.length > 0 && selectedOutputs.length > 0){
+      //pass
+      ConfigurationFactory.setConfiguration({
+        collector: selectedCollector[0],
+        outputs: selectedOutputs
+      });
+
+      $location.path('/configuration');
+    }else{
+      $scope.error = true;
+    }
+  };
+
+  $scope.onSelectColector = function($event, item){
+    item.selected = !item.selected;
   };
 };
 
