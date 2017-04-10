@@ -27,3 +27,31 @@ body{
   font-size: 20px;
   margin-bottom:20px;
 }
+
+
+.btn{
+  width: 150px;
+  padding: 15px 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 0 none;
+}
+
+@mixin btn-theme($color-primary, $color-secondary) {
+  background: $color-primary;
+  color: #FFFFFF;
+  &:hover, &:focus, &:active{
+    background: $color-secondary !important;
+    box-shadow: none;
+    outline: 0 none;
+  }
+}
+
+.btn-next{
+  @include btn-theme($btn-color-primary, $btn-color-secondary);
+}
+
+.btn-previous{
+  @include btn-theme($btn-prev-color-primary, $btn-prev-color-secondary);
+}
