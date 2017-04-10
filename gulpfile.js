@@ -56,4 +56,18 @@ gulp.task('inject', function(){
              .pipe(gulp.dest(output.html))
 })
 
+gulp.task('watch', function(){
+  gulp.watch(input.sass, ['build-css']).on('change', function(){
+    console.log('Compiling sass files')
+  })
+
+  gulp.watch(input.js, ['build-js']).on('change', function(){
+    console.log('JS file has been changed')
+  })
+
+  gulp.watch(input.html, gulpSync.sync(['build-html', 'inject'])).on('change', function(){
+    console.log('Building project ...')
+  })
+})
+
 gulp.task('build', gulpSync.sync([['build-html', 'build-css', 'build-js', 'build-resources'], 'inject']))
