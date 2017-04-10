@@ -1,4 +1,4 @@
-# Octopus 
+# Octopus
 
 [![Build Status](https://travis-ci.org/mlabouardy/octopus.svg?branch=master)](https://travis-ci.org/mlabouardy/octopus) [![Go Report Card](https://goreportcard.com/badge/github.com/mlabouardy/octopus)](https://goreportcard.com/report/github.com/mlabouardy/octopus)
 
@@ -10,12 +10,12 @@ create config files for famous collectors: telegraf, collectd, diamond
 
 ## Supported Input
 
-- CollectD
 - Telegraf
-- Diamond
 
 ## Supported Output
 
 - InfluxDB
 - Elasticsearch
 - Graphite
+- Graylog
+- AWS CloudWatch
