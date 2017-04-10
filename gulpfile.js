@@ -5,6 +5,7 @@ var del = require('del');
 var series = require('stream-series');
 var inject = require('gulp-inject');
 var gulpSync = require('gulp-sync')(gulp);
+var jshint = require('gulp-jshint');
 
 var input = {
   sass: 'public/assets/sass/**/*.scss',
@@ -24,6 +25,13 @@ var output = {
 
 gulp.task('clean', function(cb){
   del(['build'], cb)
+})
+
+
+gulp.task('jshint', function(){
+    return gulp.src(input.js)
+               .pipe(jshint())
+               .pipe(jshint.reporter('jshint-stylish'))
 })
 
 gulp.task('build-css', function(){
@@ -61,7 +69,7 @@ gulp.task('watch', function(){
     console.log('Compiling sass files')
   })
 
-  gulp.watch(input.js, ['build-js']).on('change', function(){
+  gulp.watch(input.js, ['build-js', 'jshint']).on('change', function(){
     console.log('JS file has been changed')
   })
 

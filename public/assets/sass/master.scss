@@ -4,6 +4,10 @@ body{
   height: 100%;
 }
 
+.content{
+  min-height: 500px;
+}
+
 .container{
   margin-top: 20px;
 }
@@ -79,4 +83,12 @@ body{
       border-bottom: 2px solid $btn-color-primary;
     }
   }
+}
+
+.logo-download{
+  margin-top: 20px;
+  img{
+    width: 100px;
+  }
+
 }

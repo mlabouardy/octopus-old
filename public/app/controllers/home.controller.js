@@ -1,4 +1,4 @@
-var HomeCtrl = function($scope){
+var HomeCtrl = function($scope, $location){
   $scope.collectors = [
     {
       name: 'Telegraf',
@@ -27,7 +27,11 @@ var HomeCtrl = function($scope){
       name: 'AWS CloudWatch',
       logo: 'assets/images/cloudwatch.png'
     }
-  ]
+  ];
+
+  $scope.configure = function(){
+    $location.path('/configuration');
+  };
 };
 
 angular.module('app.controllers')

@@ -5,5 +5,13 @@ angular.module('app', ['ngRoute', 'app.controllers', 'app.services'])
             templateUrl: 'views/home.html',
             controller: 'HomeCtrl'
           })
-          .otherwise({redirectTo: '/'})
-       })
+          .when('/configuration',{
+            templateUrl: 'views/configuration.html',
+            controller: 'ConfigurationCtrl'
+          })
+          .when('/download',{
+            templateUrl: 'views/download.html',
+            controller: 'DownloadCtrl'
+          })
+          .otherwise({redirectTo: '/'});
+       });
