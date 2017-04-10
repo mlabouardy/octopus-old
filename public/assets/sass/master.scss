@@ -4,17 +4,26 @@ body{
   height: 100%;
 }
 
-.input {
-  height:100px;
-  background-color: $primary-color;
-  display: flex;
-  .logo {
-    width: 100%;
+.container{
+  margin-top: 20px;
+}
 
-    img {
-      max-width: $logo-width;
-      max-height: $logo-height;
-      margin: auto;
+.collector {
+  height: 90px;
+  .logo{
+    background: $primary-color;
+    padding: 20px;
+    border: 2px solid $primary-color;
+    border-radius: 10px;
+    height: 70px;
+    img{
+      max-height:30px;
+      max-width:100px;
     }
   }
+}
+
+.header-title {
+  font-size: 20px;
+  margin-bottom:20px;
 }

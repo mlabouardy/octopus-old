@@ -2,22 +2,14 @@ var HomeCtrl = function($scope){
   $scope.inputs = [
     {
       name: 'Telegraf',
-      logo: 'assets/images/elasticsearch.png'
-    },
-    {
-      name: 'Collectd',
-      logo: 'assets/images/elasticsearch.png'
-    },
-    {
-      name: 'Diamond',
-      logo: 'assets/images/elasticsearch.png'
+      logo: 'assets/images/telegraf.png'
     }
   ];
 
-  $scope.ouputs = [
+  $scope.outputs = [
     {
       name: 'InfluxDB',
-      logo: 'assets/images/elasticsearch.png'
+      logo: 'assets/images/influxdb.png'
     },
     {
       name: 'ElasticSearch',
@@ -25,7 +17,15 @@ var HomeCtrl = function($scope){
     },
     {
       name: 'Graphite',
-      logo: 'assets/images/elasticsearch.png'
+      logo: 'assets/images/graphite.png'
+    },
+    {
+      name: 'Graylog',
+      logo: 'assets/images/graylog.png'
+    },
+    {
+      name: 'AWS CloudWatch',
+      logo: 'assets/images/cloudwatch.png'
     }
   ]
 };
