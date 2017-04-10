@@ -7,32 +7,13 @@
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body ng-controller="HomeCtrl" class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="header-title">Input</div>
-      </div>
-      <div class="col-md-3 collector" ng-repeat="input in inputs">
-        <div class="logo"><img ng-src="{{input.logo}}" class="img-responsive center-block" /></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="header-title">Output</div>
-      </div>
-      <div class="col-md-3 collector" ng-repeat="output in outputs">
-        <div class="logo"><img ng-src="{{output.logo}}" class="img-responsive center-block" /></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <button class="btn btn-primary btn-next pull-right">Next</button>
-      </div>
-    </div>
+  <body class="container">
+    <div ng-view></div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js" charset="utf-8"></script>
   <!-- inject:js -->
   <!-- endinject -->
 </html>

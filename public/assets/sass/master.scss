@@ -55,3 +55,28 @@ body{
 .btn-previous{
   @include btn-theme($btn-prev-color-primary, $btn-prev-color-secondary);
 }
+
+.progresstion-header{
+  margin-bottom: 20px;
+}
+
+.progression-bar {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li{
+    height: 50px;
+    color: #E7E7E7;
+    border-bottom: 2px solid #E7E7E7;
+    span{
+      font-size: 22px;
+      margin-left: 20px;
+      text-transform: uppercase;
+    }
+    &.active{
+      color: $btn-color-primary;
+      border-bottom: 2px solid $btn-color-primary;
+    }
+  }
+}

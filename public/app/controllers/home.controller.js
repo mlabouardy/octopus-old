@@ -1,5 +1,5 @@
 var HomeCtrl = function($scope){
-  $scope.inputs = [
+  $scope.collectors = [
     {
       name: 'Telegraf',
       logo: 'assets/images/telegraf.png'

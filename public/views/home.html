@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-lg-12 progresstion-header">
+    <ul class="progression-bar">
+      <li class="col-xs-4 active">
+        <span>Collector</span>
+      </li>
+      <li class="col-xs-4">
+        <span>Configuration</span>
+      </li>
+      <li class="col-xs-4">
+        <span>Download</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="header-title">Collectors</div>
+  </div>
+  <div class="col-md-3 collector" ng-repeat="collector in collectors">
+    <div class="logo"><img ng-src="{{collector.logo}}" class="img-responsive center-block" /></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="header-title">Output</div>
+  </div>
+  <div class="col-md-3 collector" ng-repeat="output in outputs">
+    <div class="logo"><img ng-src="{{output.logo}}" class="img-responsive center-block" /></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <button class="btn btn-primary btn-next pull-right">Next</button>
+  </div>
+</div>
