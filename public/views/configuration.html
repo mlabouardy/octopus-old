@@ -32,24 +32,43 @@
       <div ng-repeat="output in configuration.outputs">
         <div class="header-title">Output {{$index+1}}: <label>{{output}}</label></div>
         <!-- influxdb -->
-        <div class="col-lg-12">
-          Configraution
+        <div class="col-lg-12" ng-if="output === 'influxdb'">
+          <div class="form-group col-lg-3">
+            <label>Need authentication ?</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group col-lg-3">
+            <label>URL</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group  col-lg-3">
+            <label>Database</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group col-lg-3">
+            <label>Username</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group col-lg-3">
+            <label>Password</label>
+            <input type="password" class="form-control" />
+          </div>
         </div>
         <!-- elasticsearch -->
-        <div class="col-lg-12">
-          Configraution
+        <div class="col-lg-12" ng-if="output === 'elasticsearch'">
+          <ng-include src="'views/outputs/elasticsearch.html'"></ng-include>
         </div>
         <!-- graphite -->
-        <div class="col-lg-12">
-          Configraution
+        <div class="col-lg-12" ng-if="output === 'graphite'">
+          <ng-include src="'views/outputs/graphite.html'"></ng-include>
         </div>
         <!-- graylog -->
-        <div class="col-lg-12">
-          Configraution
+        <div class="col-lg-12" ng-if="output === 'graylog'">
+          <ng-include src="'views/outputs/graylog.html'"></ng-include>
         </div>
         <!-- cloudwatch -->
-        <div class="col-lg-12">
-          Configraution
+        <div class="col-lg-12" ng-if="output === 'cloudwatch'">
+          <ng-include src="'views/outputs/cloudwatch.html'"></ng-include>
         </div>
       </div>
     </div>
