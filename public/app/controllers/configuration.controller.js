@@ -45,6 +45,23 @@ var ConfigurationCtrl = function($scope, $location, ConfigurationFactory, $windo
   $scope.generate = function(){
     $location.path('/download');
   };
+
+  $scope.influxdb = {
+    auth: false,
+    username: '',
+    password: '',
+    urls: [''],
+    database: ''
+  }
+
+  $scope.pushUrltoInfluxConfig = function(){
+    $scope.influxdb.urls.push('');
+  };
+
+  $scope.removeUrlFromInfluxConfig = function() {
+    var lastItem = $scope.influxdb.urls.length-1;
+    $scope.influxdb.urls.splice(lastItem);
+  };
 };
 
 angular.module('app.controllers')

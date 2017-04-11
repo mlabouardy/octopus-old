@@ -1,0 +1,33 @@
+<div class="form-group col-lg-3">
+  <label>Need authentication ?</label> <br/>
+  <input type="radio" name="auth" ng-value="true" ng-model="influxdb.auth"> Yes<br>
+  <input type="radio" name="auth" ng-value="false" ng-model="influxdb.auth"> No<br>
+  <div ng-show="influxdb.auth" class="auth-group">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="influxdb.username" placeholder="username"/>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" ng-model="influxdb.password" placeholder="password"/>
+    </div>
+  </div>
+</div>
+<div class="form-group col-lg-3">
+  <fieldset  data-ng-repeat="url in influxdb.urls track by $index">
+    <div class="row">
+      <div class="col-lg-8">
+        <input type="text" class="form-control" placeholder="URL" />
+      </div>
+      <div class="col-lg-4">
+        <div class="btn-group">
+          <button class="btn btn-primary btn-remove" ng-show="$index != 0" ng-click="removeUrlFromInfluxConfig()"><i class="fa fa-times" aria-hidden="true"></i></button>
+          <button ng-click="pushUrltoInfluxConfig()" class="btn btn-primary btn-add"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<div class="form-group col-lg-3">
+  <div class="form-group">
+    <input type="text" class="form-control" ng-model="influxdb.database" placeholder="database"/>
+  </div>
+</div>

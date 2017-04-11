@@ -64,6 +64,21 @@ body{
   @include btn-theme($btn-prev-color-primary, $btn-prev-color-secondary);
 }
 
+.btn-add{
+  width: 30px;
+  padding: 5px 5px;
+  font-size: 10px;
+  @include btn-theme($btn-add-color-primary, $btn-add-color-secondary);
+}
+
+.btn-remove{
+  width: 30px;
+  padding: 5px 5px;
+  font-size: 10px;
+  float:left;
+  @include btn-theme($btn-remove-color-primary, $btn-remove-color-secondary);
+}
+
 .progresstion-header{
   margin-bottom: 20px;
 }
@@ -114,4 +129,19 @@ body{
     text-transform:uppercase;
     line-height:40px;
   }
+}
+
+fieldset{
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="password"]{
+  padding: 10px 10px;
+  border: 1px solid $primary-color;
+  border-radius: 0px;
+  font-size: 13px;
+}
+
+.auth-group{
+  margin-top: 10px;
 }
